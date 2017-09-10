@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Datatable Snippet Bootstrap</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  </head>
+  <body>
+      <div class="container">
+          <div class="row">
+              <div class="col-md-12">
+                  <h4>Datatable Bootstrap</h4>
+                  <div class="table-responsive">
+                      <button class="btn btn-success pull-right" data-toggle="modal" data-target="#add"><span class="glyphicon glyphicon-plus"></span> New Data</button>
+                      <div class="clearfix" style="margin-bottom: 10px;"></div>
+                      <table class="table table-striped" id="mytable">
+                          <thead>
+                              <th><input type="checkbox" id="checkall"></th>
+                              <th>First Name</th>
+                              <th>Last Name</th>
+                              <th>Address</th>
+                              <th>Email</th>
+                              <th>Contact</th>
+                              <th>Edit</th>
+                              <th>Delete</th>
+                          </thead>
+                          <tbody></tbody>
+                      </table>
+                      <div class="clearfix"></div>
+                      <ul class="paginations pull-right"><ul>
+                  </div>
+              </div>
+          </div>
+      </div>
+
+      <div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-labelledby="edit" aria-hidden="true">
+          <div class="modal-dialog">
+              <div class="modal-content">
+                    <form action="" validate id="updateData">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true" name="button"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+                            <h4 class="modal-title custom_align" id="Heading">Edit Your Detail</h4>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <input name="firstName" type="text" class="form-control" placeholder="First Name" required data-validation-required-message="This field is required">
+                            </div>
+                            <div class="form-group">
+                                <input name="lastName" type="text" class="form-control" placeholder="Last Name" required data-validation-required-message="This field is required">
+                            </div>
+                            <div class="form-group">
+                                <textarea name="address" class="form-control" placeholder="Address" name="name" rows="2" required data-validation-required-message="This field is required"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <input name="email" type="email" class="form-control" placeholder="Email" required data-validation-required-message="This field is required">
+                            </div>
+                            <div class="form-group">
+                                <input name="contact" type="text" class="form-control" placeholder="Contact" required data-validation-required-message="This field is required">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-warning btn-lg btnUpdate" type="submit" style="width: 100%;"><span class="glyphicon glyphicon-ok-sign"></span> Update</button>
+                        </div>
+                    </form>
+              </div>
+              <!-- modal-content -->
+          </div>
+          <!-- modal-dialog -->
+      </div>
+      <!-- modal -->
+
+      <div class="modal fade" id="add" tabindex="-1" role="dialog" aria-labelledby="add" aria-hidden="true">
+          <div class="modal-dialog">
+              <div class="modal-content">
+                  <form action="" validate id="addData">
+                      <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal" aria-hidden="true" name="button"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+                          <h4 class="modal-title custom_align" id="Heading">Input New Data</h4>
+                      </div>
+                      <div class="modal-body">
+                          <div class="form-group">
+                              <input name="firstName" type="text" class="form-control" placeholder="First Name" required data-validation-required-message="This field is required">
+                          </div>
+                          <div class="form-group">
+                              <input name="lastName" type="text" class="form-control" placeholder="Last Name" required data-validation-required-message="This field is required">
+                          </div>
+                          <div class="form-group">
+                              <textarea name="address" class="form-control" placeholder="Address" name="name" rows="2" required data-validation-required-message="This field is required"></textarea>
+                          </div>
+                          <div class="form-group">
+                              <input name="email" type="email" class="form-control" placeholder="Email" required data-validation-required-message="This field is required">
+                          </div>
+                          <div class="form-group">
+                              <input name="contact" type="text" class="form-control" placeholder="Contact" required data-validation-required-message="This field is required">
+                          </div>
+                      </div>
+                      <div class="modal-footer">
+                          <button class="btn btn-warning btn-lg" type="submit" style="width: 100%;"><span class="glyphicon glyphicon-ok-sign"></span> Save</button>
+                      </div>
+                  </form>
+              </div>
+              <!-- modal-content -->
+          </div>
+          <!-- modal-dialog -->
+      </div>
+      <!-- modal -->
+
+      <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="delete" aria-hidden="true">
+          <div class="modal-dialog">
+              <div class="modal-content">
+                  <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true" name="button"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+                      <h4 class="modal-title custom_align" id="Heading">Delete</h4>
+                  </div>
+                  <div class="modal-body">
+                      <div class="alert alert-danger"><span class="glyphicon glyphicon-warning-sign"></span>  Are you sure want to delete this Record?</div>
+                  </div>
+                  <div class="modal-footer">
+                      <button class="btn btn-success btnDeleteOk" type="button" data-dismiss="modal"><span class="glyphicon glyphicon-ok-sign"></span> Yes</button>
+                      <button class="btn btn-default" type="button" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> No</button>
+                  </div>
+              </div>
+              <!-- modal-content -->
+          </div>
+          <!-- modal-dialog -->
+      </div>
+      <!-- modal -->
+
+  </body>
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="lib/js/app.js"></script>
+  <script src="lib/js/jquery.bootpag.min.js"></script>
+  <script src="lib/js/jqBootstrapValidation.js"></script>
+  <script src="lib/js/bootstrap-notify.min.js"></script>
+</html>
